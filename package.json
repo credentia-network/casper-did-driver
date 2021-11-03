@@ -1,0 +1,45 @@
+{
+  "name": "casper-did-driver",
+  "version": "0.1.0",
+  "private": "true",
+  "description": "Casper DID method driver for Universal Resolver",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "jest",
+    "getVersion": "echo \"console.log(require('./package.json').version)\" | node"
+  },
+  "author": "Ilya Tsurkan",
+  "contributors": [
+    "Ilya Tsurkan <itsurkan@vareger.com>",
+    "Mykhailo Tiutin <miha.tiutin@vareger.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:credentia/casper-did-driver.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "casper-did-resolver": "git+https://github.com/credentia-network/casper-did-resolver.git",
+    "did-resolver": "3.1.0",
+    "express": "4.17.1"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "5.0.1",
+    "@semantic-release/commit-analyzer": "8.0.1",
+    "@semantic-release/exec": "5.0.0",
+    "@semantic-release/git": "9.0.1",
+    "@semantic-release/github": "7.2.3",
+    "@semantic-release/npm": "7.1.3",
+    "@semantic-release/release-notes-generator": "9.0.3",
+    "jest": "27.3.1",
+    "semantic-release": "17.4.7",
+    "supertest": "6.1.6"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  }
+}
