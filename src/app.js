@@ -19,15 +19,13 @@ const agent = core.createAgent({
 const express = require('express')
 const app = express()
 
-app.get('/1.0/identifiers/*', function (req, res) {
-  const url = req.url
-  const regex = /\/1.0\/identifiers\/(did:.*)/
-  const did = regex.exec(url)[1]
+app.get('/1.0/identifiers/:did', function (req, res) {
+  const did = req.params.did;
 
   console.log('Resolving DID: ' + did)
 
   agent.resolveDid({
-    didUrl: didHashHex,
+    didUrl: did,
     options: { accept: 'some_attribute_type'} // Optional
     }).then((result) => {
       res.send(result)

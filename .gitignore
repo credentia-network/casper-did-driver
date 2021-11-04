@@ -58,3 +58,5 @@ typings/
 
 # emacs temp files
 *~
+
+.history
